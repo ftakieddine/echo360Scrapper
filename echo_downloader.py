@@ -42,7 +42,7 @@ def download_lectures(driver):
         return "{}fileName={}".format(unnamed_url, download_name)
     lectures = wait_then(lambda _: driver.find_elements_by_xpath(LECTURES_PATH))
     for lecture in lectures:
-        date, time = lecture.find_elements_by_xpath(TIME_PATH)
+        date, time = wait_then(lambda _: lecture.find_elements_by_xpath(TIME_PATH))
         lecture.find_element_by_xpath(OPEN_DIALOG_PATH).click()
         wait_then(lambda _: lecture.find_element_by_xpath(DOWNLOAD_LINK_PATH)).click()
         dialog = wait_then(lambda _: driver.find_element_by_xpath(DIALOG_PATH))

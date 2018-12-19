@@ -2,7 +2,7 @@
 
 *Requires python3 and pip  
 
-Script to download all lectures from any course hosted on Echo360  
+Script to download all lectures from any course hosted on Echo360 that is available on your account. 
 
 To run:
 1. pip install requirements.txt  
